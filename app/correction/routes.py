@@ -17,7 +17,7 @@ from nltk.metrics import precision, recall
 VALID_CENTURIES = [ 7, 8 ]
 letterStr = "abcdefghijklmnopqrstuvwxyzăîșț"
 
-@bp.route("/correction/get")
+@bp.route("/correction/get", methods=['GET'])
 def get():
     args = request.args
     if "id" not in args:
@@ -42,7 +42,6 @@ def get():
         "recall": recall,
         "createdAt": createdAt
     }
-      
 
     return tempObj
 

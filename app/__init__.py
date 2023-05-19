@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from config import Config
 from app.extensions import db
 
@@ -21,5 +21,5 @@ def create_app(config_class=Config):
 
     from app.correction import bp as correction_bp
     app.register_blueprint(correction_bp)
-    
+
     return app
